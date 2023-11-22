@@ -1,6 +1,6 @@
-import AMG from "../../public/amg.jpg"
-import chaithanya from "../../public/chaitanya.jpg"
-import YSR from "../../public/ysrclg.png"
+import AMG from "/amg.jpg"
+import chaithanya from "/chaitanya.jpg"
+import YSR from "/ysrclg.png"
 import { motion } from "framer-motion"
 
 const EducationData = [
@@ -32,10 +32,9 @@ const EducationData = [
 
 export function Education(){
     return (
-        <div className="flex flex-col gap-28 items-center">
-            <h1 className="text-xl font-semibold">EDUCATION</h1>
+        <div className="flex flex-col items-center gap-10 mt-10">
             {EducationData.map(education=>
-            <motion.div className="border rounded-xl gap-4 px-2 py-4 flex w-[50%] h-[50%] justify-around" key={education.id}>
+            <motion.div className="border rounded-xl gap-4 px-2 py-4 flex w-[70%] h-[90%] justify-around" key={education.id}>
                 <div className="flex flex-col justify-center items-center gap-4">
                     <h1 className="text-xl font-semibold">{education.institute}</h1>
                     <h4 className="text-lg font-medium">{education.yearStart}-{education.yearEnd}</h4>
