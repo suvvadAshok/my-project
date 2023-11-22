@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import './App.css'
-import React from 'react'
+import { Outlet } from 'react-router-dom'
 import { Home } from './component/Home'
+import { Education } from './Pages/education'
+import { Main } from './component/main'
+import { Navbar } from './component/navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <Home/>
-      
-    </>
+    <div className='flex flex-col h-screen w-screen'>
+      <Navbar/>
+        <div className="grow overflow-auto">
+          <Main/> 
+        </div>
+    </div>
   )
 }
 
