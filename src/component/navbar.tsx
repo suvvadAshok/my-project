@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronUp } from "lucide-react"
-import React from "react"
+import { Link } from "react-router-dom"
 
 type DATA = {id:number,navData:string,subMenu:string[]}
 
@@ -14,25 +14,19 @@ const data:DATA[] = [
 export function Navbar(){
 
     return (
-        <div className="flex justify-between p-4 border-b-2">
-            <h1>ASHOK</h1>
-            <div className="flex gap-12">
-            {data.map(menu=>
-                <div key={menu.id} className="hover:bg-slate-400 px-4 cursor-pointer group relative" >
-                    <h1 className="flex gap-2 items-center relative"><span>{menu.navData}</span> <span>{menu.subMenu.length? <ChevronDown />:""}</span></h1>
-                    <h1 className="flex gap-2 items-center scale-0 hover:scale-100 absolute"><span>{menu.navData}</span> <span>{menu.subMenu.length? <ChevronUp />:""}</span></h1>
-                    {menu.subMenu.length ? <div className="absolute scale-0 group-hover:scale-100 transition ease-in-out delay-150 bg-white" key={menu.navData}>{menu.subMenu.map(i=><h1 key={i}>{i}</h1> )}</div>:""}
-                </div>
-            )}
+        <div className="flex justify-between items-center px-4 text-[#cdf0f5] bg-[#0e565a]/50">
+            <Link to={`/`} className="hover:bg-[#0e565a] p-2">ASHOK</Link>
+            <div className="flex items-center">
+                {data.map(menu=>
+                    <div key={menu.id} className="cursor-pointer group relative " >
+                        {menu.subMenu.length
+                        ? <h1 className="flex gap-2 relative hover:bg-[#0e565a] p-2">{menu.navData}</h1>
+                        : <Link to={`/home/${menu.navData}`} className="p-2 items-center hover:bg-[#0e565a]">{menu.navData}</Link>}
+                        {menu.subMenu.length ? <div className="absolute scale-0 group-hover:scale-100 transition ease-in-out delay-150 flex flex-col left-0 bg-[#0e565a]/50" key={menu.navData}>
+                            {menu.subMenu.map(i=><Link to={`/home/${menu.navData}/${i}`} key={i} className="p-2 hover:bg-[#0e565a]">{i}</Link> )}</div>:""}
+                    </div>
+                )}
             </div>
-        </div>
-    )
-}
-
-export function Dropdown({subMenu}:{subMenu:string[]}){
-    return(
-        <div className="flex flex-col">
-             {subMenu.map(sub => <h1 key={sub}>{sub}</h1> )}
         </div>
     )
 }
