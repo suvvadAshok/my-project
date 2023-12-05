@@ -1,6 +1,3 @@
-import { Outlet } from 'react-router-dom'
-import { Home } from './component/Home'
-import { Education } from './Pages/education'
 import { Main } from './component/main'
 import { Navbar } from './component/navbar'
 

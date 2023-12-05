@@ -7,8 +7,16 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        // 'ti_img': "url('./public/ti.png')",
+      backgroundImage:{
+        one:"url('./assets/1.png')",
+        two:"url('./assets/2.png')",
+        three:"url('./assets/3.png')",
+        four:"url('./assets/4.png')",
+      },
+      colors:{
+        primary: "#678488",
+        secondary: "#0e565a",
+        textColor: "#cdf0f5"
       },
       fontFamily:{
         IBMPlex:['IBM_Plex_Mono', "monospace"],

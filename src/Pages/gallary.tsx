@@ -17,6 +17,7 @@ import flower_4 from "/flower_4.jpg"
 import tree_1 from "/tree_1.jpg"
 import tree_2 from "/tree_2.jpg"
 import tree_3 from "/tree_3.jpg"
+import { motion } from "framer-motion"
 
 
 const a:string[] = [cheek_1, cheek_2, cheek_3, cheek_4, cheek_5, 
@@ -25,8 +26,8 @@ const a:string[] = [cheek_1, cheek_2, cheek_3, cheek_4, cheek_5,
 
 export function Gallery(){
     return(
-        <div className="grid grid-cols-3">
-            { a.map(i=> <img src={i} key={i} alt="hii"  /> )}
+        <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 auto-cols-auto bg-gradient-to-br from-primary to-white p-4">
+            { a.map(i=> <motion.img src={i} key={i} alt="hii" className="object-fill" whileTap={{scale:1.3, boxShadow:"0 0 16px rgb(250 250 250)"}} /> )}
         </div>
     )
 }
