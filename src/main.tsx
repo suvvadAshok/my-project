@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.tsx'
 import './index.css'
 import App from './App'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
@@ -10,11 +9,13 @@ import { Contact } from './Pages/contact';
 import { Gallery } from './Pages/gallary';
 import { Experiance } from './Pages/experiance';
 import { Home } from './component/Home';
+import { Drawing } from './Pages/drawing';
+import { AboutUs } from './Pages/carousel';
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element:<App/>,
+    element:<AboutUs/>,
     errorElement: <ErrorPage />,
   },
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/home/Hobbies/Photography",
         element: <Gallery />,
+      },
+      {
+        path: "/home/Hobbies/Drawing",
+        element: <Drawing />,
       },
     ],
   },
