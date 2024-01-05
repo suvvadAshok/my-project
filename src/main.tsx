@@ -10,12 +10,11 @@ import { Gallery } from './Pages/gallary';
 import { Experiance } from './Pages/experiance';
 import { Home } from './component/Home';
 import { Drawing } from './Pages/drawing';
-import { AboutUs } from './Pages/carousel';
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element:<AboutUs/>,
+    element:<App/>,
     errorElement: <ErrorPage />,
   },
   {
